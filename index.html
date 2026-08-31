@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>KrishiSakhi — AI Powered Agriculture Price Predictor</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+</head>
+<body>
+  <header>
+    <h1>🌾 KrishiSakhi</h1>
+    <p>AI-Powered Price Prediction for Agriculture Products</p>
+  </header>
+
+  <main>
+    <section class="panel form-panel">
+      <h2>Crop Price Prediction</h2>
+
+      <label for="crop">Select Crop</label>
+      <select id="crop">
+        <option value="">-- Choose a Crop --</option>
+        {% for crop in crops %}
+          <option value="{{ crop }}">{{ crop.capitalize() }}</option>
+        {% endfor %}
+      </select>
+
+      <label for="months">Months Ahead</label>
+      <input type="number" id="months" min="1" max="24" value="6">
+
+      <button id="predictBtn">Predict Price</button>
+      <p id="errorMsg" class="error"></p>
+    </section>
+
+    <section class="panel results-panel">
+      <h2>Prediction Results</h2>
+      <table id="resultsTable">
+        <thead>
+          <tr><th>Month</th><th>Year</th><th>Predicted Price (₹)</th></tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+
+    <section class="panel chart-panel">
+      <h2>Price Trend</h2>
+      <canvas id="priceChart" height="120"></canvas>
+    </section>
+  </main>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
