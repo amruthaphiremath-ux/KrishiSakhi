@@ -14,7 +14,7 @@ import os
 import glob
 from flask import Flask, render_template, request, jsonify
 
-from utils.predictor import predict_future_prices
+from predictor import predict_future_prices
 
 app = Flask(__name__)
 
