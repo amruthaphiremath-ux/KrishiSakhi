@@ -20,8 +20,8 @@ END
 import numpy as np
 
 from preprocessing import preprocess_crop
-from utils.model_loader import load_crop_model_and_scalers
-from utils.sequence_prep import scale_features, last_known_sequence, TIME_STEPS
+from model_loader import load_crop_model_and_scalers
+from sequence_prep import scale_features, last_known_sequence, TIME_STEPS
 
 
 def _next_month_year(month: int, year: int):
