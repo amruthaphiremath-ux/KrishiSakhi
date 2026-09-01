@@ -16,7 +16,7 @@ from flask import Flask, render_template, request, jsonify
 
 from predictor import predict_future_prices
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder=".")
 
 DATA_DIR = os.path.join(os.path.dirname(__file__), "data")
 
