@@ -19,7 +19,7 @@ END
 
 import numpy as np
 
-from utils.preprocessing import preprocess_crop
+from preprocessing import preprocess_crop
 from utils.model_loader import load_crop_model_and_scalers
 from utils.sequence_prep import scale_features, last_known_sequence, TIME_STEPS
 
